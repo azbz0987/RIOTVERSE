@@ -1,0 +1,73 @@
+@import './tokens.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: dark;
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: var(--header-height);
+  }
+
+  body {
+    @apply bg-bg font-sans text-body text-text antialiased;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+  }
+
+  ::selection {
+    @apply bg-primary/30 text-text;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-bg;
+  }
+
+  img {
+    @apply select-none;
+  }
+}
+
+@layer components {
+  /* Page container: max 1440px with responsive side gutters (20 / 32 / 48 / 64px). */
+  .container-page {
+    @apply mx-auto w-full max-w-container px-gutter;
+  }
+
+  /* Vertical rhythm between page sections (72 / 96 / 128 / 160px). */
+  .section {
+    @apply py-section;
+  }
+
+  /* Champion / skin card grid: 2 → 3 → 4 → 5 → 6 columns. */
+  .grid-cards {
+    @apply grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 md:grid-cols-4 lg:grid-cols-5 lg:gap-5 xl:grid-cols-6 xl:gap-6;
+  }
+
+  /* Section overline label ("01 — Featured"): gold, uppercase, wide tracking. */
+  .eyebrow {
+    @apply font-sans text-overline uppercase text-primary;
+  }
+
+  .text-data {
+    @apply font-data tabular-nums;
+  }
+
+  /* Gold gradient text for hero titles. */
+  .text-gradient-gold {
+    @apply bg-gradient-gold bg-clip-text text-transparent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

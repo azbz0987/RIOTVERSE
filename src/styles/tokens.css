@@ -1,0 +1,107 @@
+/*
+ * RIOTVERSE design tokens — single source of truth.
+ * Colors are stored as space-separated RGB channels so Tailwind can apply
+ * opacity modifiers (e.g. bg-primary/20). tailwind.config.ts maps every token.
+ * Docs: docs/DESIGN_SYSTEM.md
+ */
+:root {
+  /* ---------- Color · base ---------- */
+  --color-bg: 8 13 24; /* #080D18  page background */
+  --color-bg-deep: 4 7 14; /* #04070E  hero overlays, footer */
+  --color-surface: 16 27 44; /* #101B2C  cards, panels */
+  --color-surface-raised: 22 36 58; /* #16243A  hover, modal */
+  --color-surface-overlay: 30 47 72; /* #1E2F48  inputs, chips */
+
+  /* ---------- Color · border ---------- */
+  --color-border: 36 52 77; /* #24344D  default divider */
+  --color-border-strong: 52 73 106; /* #34496A  input, hover border */
+
+  /* ---------- Color · brand ---------- */
+  --color-primary: 200 170 110; /* #C8AA6E  gold — CTA, active */
+  --color-primary-hover: 220 194 141; /* #DCC28D */
+  --color-primary-pressed: 166 137 82; /* #A68952 */
+  --color-primary-soft: 61 52 36; /* #3D3424  gold tint background */
+  --color-accent: 10 200 185; /* #0AC8B9  hextech teal — focus, links, highlights */
+  --color-accent-hover: 64 218 205; /* #40DACD */
+  --color-accent-soft: 8 52 58; /* #08343A  teal tint background */
+
+  /* ---------- Color · text ---------- */
+  --color-text: 232 237 244; /* #E8EDF4  primary text */
+  --color-text-secondary: 169 180 196; /* #A9B4C4  body, descriptions */
+  --color-text-muted: 125 139 161; /* #7D8BA1  captions, placeholders (AA on bg) */
+  --color-text-inverse: 8 13 24; /* #080D18  text on gold */
+
+  /* ---------- Color · status ---------- */
+  --color-success: 61 214 140; /* #3DD68C */
+  --color-warning: 242 181 68; /* #F2B544 */
+  --color-danger: 240 80 110; /* #F0506E */
+  --color-info: 79 163 247; /* #4FA3F7 */
+
+  /* ---------- Color · difficulty ---------- */
+  --color-difficulty-easy: 61 214 140;
+  --color-difficulty-normal: 242 181 68;
+  --color-difficulty-hard: 240 80 110;
+
+  /* ---------- Gradient ---------- */
+  --gradient-gold: linear-gradient(135deg, #e3cc97 0%, #c8aa6e 45%, #8f7340 100%);
+  --gradient-scrim-bottom: linear-gradient(180deg, rgb(8 13 24 / 0) 0%, rgb(8 13 24 / 0.6) 55%, rgb(8 13 24 / 0.96) 100%);
+  --gradient-scrim-left: linear-gradient(90deg, rgb(8 13 24 / 0.95) 0%, rgb(8 13 24 / 0.6) 45%, rgb(8 13 24 / 0) 100%);
+
+  /* ---------- Typography · families ---------- */
+  --font-display: 'Cinzel', 'Pretendard Variable', Pretendard, serif;
+  --font-sans: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui,
+    'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  --font-data: 'Inter', 'Pretendard Variable', Pretendard, system-ui, sans-serif;
+
+  /* ---------- Radius ---------- */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 20px;
+
+  /* ---------- Shadow & glow ---------- */
+  --shadow-card: 0 8px 24px -12px rgb(0 0 0 / 0.6);
+  --shadow-raised: 0 24px 48px -16px rgb(0 0 0 / 0.7);
+  --glow-primary: 0 0 0 1px rgb(var(--color-primary) / 0.6), 0 0 24px -4px rgb(var(--color-primary) / 0.45);
+  --glow-accent: 0 0 0 1px rgb(var(--color-accent) / 0.6), 0 0 24px -4px rgb(var(--color-accent) / 0.45);
+
+  /* ---------- Layout ---------- */
+  --container-max: 1440px;
+  --gutter: 20px; /* mobile */
+  --header-height: 60px;
+  --section-gap: 72px;
+
+  /* ---------- Motion ---------- */
+  --ease-cinematic: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+  --duration-slow: 500ms;
+
+  /* ---------- Z-index ---------- */
+  --z-header: 40;
+  --z-overlay: 50;
+  --z-modal: 60;
+  --z-toast: 70;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --gutter: 32px;
+    --section-gap: 96px;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --gutter: 48px;
+    --header-height: 72px;
+    --section-gap: 128px;
+  }
+}
+
+@media (min-width: 1440px) {
+  :root {
+    --gutter: 64px;
+    --section-gap: 160px;
+  }
+}

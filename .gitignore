@@ -1,0 +1,9 @@
+node_modules
+dist
+*.local
+*.log
+.DS_Store
+
+# Local tooling and personal notes
+.claude/
+claude_prompt.txt
